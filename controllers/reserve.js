@@ -15,7 +15,7 @@ const reserveABed = async(req, res) => {
     if(!bed) return res.status(404).send({error:"not found"})
     await bed.reserveBed()
     await newReserve.save()
-  
+    res.status(200).send(newReserve)
 }
 
 export { reserveABed }
