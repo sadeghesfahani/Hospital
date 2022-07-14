@@ -5,6 +5,13 @@ this is Maktab72 JavaScript / React Js boot camp first project
 
 ## Instructor
 * Mr Naseri
+
+## Project manager
+* Mehrdad Banafsheh
+
+## Mentor
+* Ali Kooshesh
+
 ## Team members
 * Sina Sadeghesfahani
 * Alireza Taghavi
