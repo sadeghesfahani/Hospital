@@ -11,12 +11,11 @@ const reserveABed = async(req, res) => {
         name
     })
 
-    try {
-        await Bed.findById(id).reserveBed()
-        await newReserve.save()
-    } catch (error) {
-        res.status(404).send({error:"not found"})
-    }
+    const bed = await Bed.findById(id)
+    if(!bed) return res.status(404).send({error:"not found"})
+    await bed.reserveBed()
+    await newReserve.save()
+  
 }
 
 export { reserveABed }
