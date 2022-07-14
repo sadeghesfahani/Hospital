@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Modal from "@mui/material/Modal";
-import { FormControl, FormHelperText, Input, InputLabel } from "@mui/material";
+import { FormControl, TextField } from "@mui/material";
 import { ButtonBase } from "@mui/material";
 
 const style = {
@@ -28,22 +28,24 @@ export default function BasicModal() {
       <Button onClick={handleOpen}>Open modal</Button>
       <Modal open={open} onClose={handleClose} aria-labelledby="modal-modal-title" aria-describedby="modal-modal-description">
         <Box sx={style}>
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              justifyContent: "center",
-              direction: "rtl",
-            }}
-          >
-            <FormControl>
-            <TextField id="outlined-basic" label="نام و نام خاندوادگی" variant="outlined" />
-            <TextField id="outlined-basic" label="شماره همراه" variant="outlined" />
-            <TextField id="outlined-basic" label="کد ملی" variant="outlined" />
-              <Box sx={{ display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center" }}>
+          <Box>
+            <FormControl
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
+                gap: "16px",
+              }}
+            >
+              <TextField sx={{ direction: "rtl" }} id="outlined-basic" label="نام و نام خاندوادگی" variant="outlined" />
+              <TextField sx={{ direction: "rtl" }} id="outlined-basic" label="شماره همراه" variant="outlined" />
+              <TextField sx={{ direction: "rtl" }} id="outlined-basic" label="کد ملی" variant="outlined" />
+              <Box sx={{ display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center", marginTop: "16px", gap: "32px" }}>
                 <ButtonBase>
                   <Button variant="contained">تایید</Button>
+                </ButtonBase>
+                <ButtonBase>
                   <Button variant="contained" color="error">
                     لغو
                   </Button>
