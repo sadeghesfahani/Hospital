@@ -1,70 +1,62 @@
-import React, { useEffect, useState } from "react";
-import ReactDOM from "react-dom";
-import styled from "styled-components";
+import React, { useState } from "react";
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
+import Modal from "@mui/material/Modal";
+import { FormControl, FormHelperText, Input, InputLabel } from "@mui/material";
 
-const Modal = ({ show, onClose, children, title }) => {
-  const [isBrowser, setIsBrowser] = useState(false);
-
-  useEffect(() => {
-    setIsBrowser(true);
-  }, []);
-
-  const handleCloseClick = (e) => {
-    e.preventDefault();
-    onClose();
-  };
-
-  const modalContent = show ? (
-    <StyledModalOverlay>
-      <StyledModal>
-        <StyledModalHeader>
-          <a href="#" onClick={handleCloseClick}>
-            x
-          </a>
-        </StyledModalHeader>
-        {title && <StyledModalTitle>{title}</StyledModalTitle>}
-        <StyledModalBody>{children}</StyledModalBody>
-      </StyledModal>
-    </StyledModalOverlay>
-  ) : null;
-
-  if (isBrowser) {
-    return ReactDOM.createPortal(
-      modalContent,
-      document.getElementById("modal-root")
-    );
-  } else {
-    return null;
-  }
+const style = {
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: 400,
+  bgcolor: "background.paper",
+  borderRadius: "16px",
+  border: "2px solid #0070F3",
+  boxShadow: 24,
+  p: 4,
 };
 
-const StyledModalBody = styled.div`
-  padding-top: 10px;
-`;
+export default function BasicModal() {
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
 
-const StyledModalHeader = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  font-size: 25px;
-`;
-
-const StyledModal = styled.div`
-  background: white;
-  width: 500px;
-  height: 600px;
-  border-radius: 15px;
-  padding: 15px;
-`;
-const StyledModalOverlay = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgba(0, 0, 0, 0.5);
-`;
-
-export default Modal;
+  return (
+    <div>
+      <Button onClick={handleOpen}>Open modal</Button>
+      <Modal open={open} onClose={handleClose} aria-labelledby="modal-modal-title" aria-describedby="modal-modal-description">
+        <Box sx={style}>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+              direction: "rtl",
+            }}
+          >
+            <FormControl>
+              <InputLabel htmlFor="name-input">نام و نام خانوادگی</InputLabel>
+              <Input id="name-input" aria-describedby="name-helper-text" />
+              <FormHelperText id="name-helper-text">نام و نام خانوادگی خود را وارد نمایید.</FormHelperText>
+              <InputLabel htmlFor="phone-input">تلفن همراه</InputLabel>
+              <Input id="phone-input" aria-describedby="phone-helper-text" />
+              <FormHelperText id="phone-helper-text">تلفن همراه خود را وارد نمایید.</FormHelperText>
+              <InputLabel htmlFor="idCode-input">کد ملی</InputLabel>
+              <Input id="idCode-input" aria-describedby="idCode-helper-text" />
+              <FormHelperText id="idCode-helper-text">شماره ملی خود را بدون خط تیره وارد نمایید.</FormHelperText>
+              <Box sx={{display: "flex" , flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "center",}}>
+              <Button variant="contained">تایید</Button>
+              <Button variant="contained" color="error">لغو</Button>
+              </Box>
+            </FormControl>
+          </Box>
+        </Box>
+      </Modal>
+    </div>
+  );
+}
