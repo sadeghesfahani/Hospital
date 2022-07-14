@@ -6,7 +6,10 @@ const roomSchema = new mongoose.Schema({
         required:true
     },
     beds:[
-        {number:Number,price:Number,isReserved:Boolean}
+        {bed:{
+            type:mongoose.Schema.Types.ObjectId,
+            ref:"Beds"
+        }}
     ]
 })
 
