@@ -4,8 +4,9 @@ import Button from "@mui/material/Button";
 import BedRoundedIcon from "@mui/icons-material/BedRounded";
 import KingBedRoundedIcon from "@mui/icons-material/KingBedRounded";
 import { Typography } from "@mui/material";
-export default function Bed() {
-  const [isOccupied, setIsOccupied] = React.useState(false);
+import Tooltip from "@mui/material/Tooltip";
+export default function Bed({ bed }) {
+  const [isOccupied, setIsOccupied] = React.useState(bed.isOccupied);
   const handleClick = () => {
     setIsOccupied(!isOccupied);
   };
@@ -24,16 +25,18 @@ export default function Bed() {
         justifyContent: "center",
       }}
     >
-      <Button
-        sx={{ display: "flex", flexDirection: "column", gap: "4px" }}
-        disabled={isOccupied}
-        onClick={handleClick}
-      >
-        {isOccupied ? <BedRoundedIcon /> : <KingBedRoundedIcon />}
-        <Typography fontWeight="bold" variant="caption">
-          {isOccupied ? "اشغال شده" : "خالی"}
-        </Typography>
-      </Button>
+      <Tooltip title={bed.price + " $"}>
+        <Button
+          sx={{ display: "flex", flexDirection: "column", gap: "4px" }}
+          disabled={isOccupied}
+          onClick={handleClick}
+        >
+          {isOccupied ? <BedRoundedIcon /> : <KingBedRoundedIcon />}
+          <Typography fontWeight="bold" variant="caption">
+            {isOccupied ? "اشغال شده" : "خالی"}
+          </Typography>
+        </Button>
+      </Tooltip>
     </Box>
   );
 }

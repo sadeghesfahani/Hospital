@@ -2,7 +2,7 @@ import React from "react";
 import Bed from "./Bed/Bed";
 import { Box } from "@mui/system";
 import { Typography } from "@mui/material";
-export default function Room() {
+export default function Room({ room }) {
   return (
     <Box
       sx={{
@@ -27,12 +27,12 @@ export default function Room() {
           gap: 3,
         }}
       >
-        <Bed />
-        <Bed />
-        <Bed />
+        {room.beds.map((bed) => (
+          <Bed key={bed.id} bed={bed} />
+        ))}
       </Box>
 
-      <Typography variant="h6">اتاق شماره 1</Typography>
+      <Typography variant="h6">{room.name}</Typography>
     </Box>
   );
 }
