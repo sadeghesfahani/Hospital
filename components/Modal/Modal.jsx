@@ -38,15 +38,9 @@ export default function BasicModal() {
             }}
           >
             <FormControl>
-              <InputLabel htmlFor="name-input">نام و نام خانوادگی</InputLabel>
-              <Input id="name-input" aria-describedby="name-helper-text" />
-              <FormHelperText id="name-helper-text">نام و نام خانوادگی خود را وارد نمایید.</FormHelperText>
-              <InputLabel htmlFor="phone-input">تلفن همراه</InputLabel>
-              <Input id="phone-input" aria-describedby="phone-helper-text" />
-              <FormHelperText id="phone-helper-text">تلفن همراه خود را وارد نمایید.</FormHelperText>
-              <InputLabel htmlFor="idCode-input">کد ملی</InputLabel>
-              <Input id="idCode-input" aria-describedby="idCode-helper-text" />
-              <FormHelperText id="idCode-helper-text">شماره ملی خود را بدون خط تیره وارد نمایید.</FormHelperText>
+            <TextField id="outlined-basic" label="نام و نام خاندوادگی" variant="outlined" />
+            <TextField id="outlined-basic" label="شماره همراه" variant="outlined" />
+            <TextField id="outlined-basic" label="کد ملی" variant="outlined" />
               <Box sx={{ display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center" }}>
                 <ButtonBase>
                   <Button variant="contained">تایید</Button>
