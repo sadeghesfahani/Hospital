@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eb89dad2-e1c0-48d1-be51-cfc2909204a1" name="Changes" comment="feat(readme): mentor and project manager added">
-      <change afterPath="$PROJECT_DIR$/controllers/bed.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/api/bed/[id].js" afterDir="false" />
-    </list>
+    <list default="true" id="eb89dad2-e1c0-48d1-be51-cfc2909204a1" name="Changes" comment="feat(bed): controller and endpoint created" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,6 +23,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="5" />
     <option name="recentBranches">
       <RecentBranches>
         <option name="branchesForRepo">
@@ -33,6 +31,10 @@
             <RecentBranchesForRepo>
               <option name="branches">
                 <list>
+                  <RecentBranch>
+                    <option name="branchName" value="mohammadinia-header&amp;footer" />
+                    <option name="lastUsedInstant" value="1657803178" />
+                  </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="HOS-30getBed" />
                     <option name="lastUsedInstant" value="1657799898" />
@@ -77,7 +79,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1657780294995</updated>
-      <workItem from="1657780296286" duration="4795000" />
+      <workItem from="1657780296286" duration="5620000" />
     </task>
     <task id="LOCAL-00001" summary="feat(readme): readme file updated">
       <created>1657781328608</created>
@@ -93,7 +95,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657781489161</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="feat(bed): controller and endpoint created">
+      <created>1657800006246</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1657800006246</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -113,6 +122,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat(readme): readme file updated" />
     <MESSAGE value="feat(readme): mentor and project manager added" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(readme): mentor and project manager added" />
+    <MESSAGE value="feat(bed): controller and endpoint created" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(bed): controller and endpoint created" />
   </component>
 </project>
