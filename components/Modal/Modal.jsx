@@ -38,7 +38,7 @@ export default function BasicModal() {
                 gap: "16px",
               }}
             >
-              <TextField sx={{ direction: "rtl" }} id="outlined-basic" label="نام و نام خاندوادگی" variant="outlined" />
+              <TextField sx={{ direction: "rtl" }} id="outlined-basic" label="نام و نام خانوادگی" variant="outlined" />
               <TextField sx={{ direction: "rtl" }} id="outlined-basic" label="شماره همراه" variant="outlined" />
               <TextField sx={{ direction: "rtl" }} id="outlined-basic" label="کد ملی" variant="outlined" />
               <Box sx={{ display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center", marginTop: "16px", gap: "32px" }}>
