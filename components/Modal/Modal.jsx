@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import { FormControl, FormHelperText, Input, InputLabel } from "@mui/material";
+import { ButtonBase } from "@mui/material";
 
 const style = {
   position: "absolute",
@@ -47,11 +47,13 @@ export default function BasicModal() {
               <InputLabel htmlFor="idCode-input">کد ملی</InputLabel>
               <Input id="idCode-input" aria-describedby="idCode-helper-text" />
               <FormHelperText id="idCode-helper-text">شماره ملی خود را بدون خط تیره وارد نمایید.</FormHelperText>
-              <Box sx={{display: "flex" , flexDirection: "row",
-              alignItems: "center",
-              justifyContent: "center",}}>
-              <Button variant="contained">تایید</Button>
-              <Button variant="contained" color="error">لغو</Button>
+              <Box sx={{ display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center" }}>
+                <ButtonBase>
+                  <Button variant="contained">تایید</Button>
+                  <Button variant="contained" color="error">
+                    لغو
+                  </Button>
+                </ButtonBase>
               </Box>
             </FormControl>
           </Box>
